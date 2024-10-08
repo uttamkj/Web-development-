@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strong Password Generator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .field {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: green;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Password Generator</h2>
+        <form id="password-form" onsubmit="generatePassword(event)">
+            <div class="field">
+                <label for="length">Password Length (8-16):</label>
+                <input type="number" id="length" name="length" min="8" max="16" required>
+            </div>
+            <div class="field">
+                <input type="submit" value="Generate Password">
+            </div>
+        </form>
+        <div id="message" class="error"></div>
+        <div id="password" class="result"></div>
+    </div>
+
+    <script>
+        const passwordForm = document.getElementById('password-form');
+        const lengthInput = document.getElementById('length');
+        const messageDiv = document.getElementById('message');
+        const passwordDiv = document.getElementById('password');
+
+        const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const lowercase = 'abcdefghijklmnopqrstuvwxyz';
+        const numbers = '0123456789';
+        const specialChars = '!@#$%^&*()_+[]{}|;:,.<>?';
+
+        function getRandomChar(charSet) {
+            return charSet[Math.floor(Math.random() * charSet.length)];
+        }
+
+        function generatePassword(length) {
+            let password = '';
+
+            password += getRandomChar(uppercase);
+            password += getRandomChar(lowercase);
+            password += getRandomChar(numbers);
+            password += getRandomChar(specialChars);
+
+            let allChars = uppercase + lowercase + numbers + specialChars;
+
+            for (let i = password.length; i < length; i++) {
+                password += getRandomChar(allChars);
+            }
+
+            return password.split('').sort(() => Math.random() - 0.5).join('');
+        }
+
+        passwordForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const length = parseInt(lengthInput.value);
+
+            if (length < 8 || length > 16) {
+                messageDiv.textContent = "Password length must be between 8 and 16 characters.";
+                passwordDiv.textContent = '';
+                return;
+            }
+
+            messageDiv.textContent = '';
+
+            const password = generatePassword(length);
+            passwordDiv.textContent = `Generated Password: ${password}`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!-- Name : Uttam Kumar jena
+Roll : 09 
+Sic : 23mmci80 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .tab-product {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        .tab-product th,
+        .tab-product td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Products Table</h1>
+    <div id="container">
+
+    </div>
+
+    <script src="./jq/jquery-3.7.1.js"></script>
+    <script>
+        let products = [
+            { pid: 1, name: "Wireless Mouse", category: "Electronics", price: 29.99, rating: 4.5 },
+            { pid: 2, name: "Bluetooth Headphones", category: "Electronics", price: 59.99, rating: 4.7 },
+            { pid: 3, name: "Gaming Keyboard", category: "Electronics", price: 89.99, rating: 4.6 },
+            { pid: 4, name: "Coffee Maker", category: "Home Appliances", price: 49.99, rating: 4.2 },
+            { pid: 5, name: "Air Fryer", category: "Home Appliances", price: 99.99, rating: 4.8 },
+            { pid: 6, name: "Yoga Mat", category: "Fitness", price: 19.99, rating: 4.5 },
+            { pid: 7, name: "Fitness Tracker", category: "Fitness", price: 39.99, rating: 4.4 },
+            { pid: 8, name: "Smartphone Stand", category: "Accessories", price: 15.99, rating: 4.3 },
+            { pid: 9, name: "Portable Charger", category: "Accessories", price: 24.99, rating: 4.6 },
+            { pid: 10, name: "Stylish Backpack", category: "Fashion", price: 39.99, rating: 4.5 }
+        ]
+        let data = `<table class="tab-product">`
+        data += `<tr>
+            <th>pid</th>
+            <th>Name</th>
+            <th>catagory</th>
+            <th>price</th>
+            <th>rating</th>
+            </tr>`
+        for (let i = 0; i < products.length; i++) {
+            data += `
+                <tr>
+                    <td>${products[i].pid}</td>
+                    <td>${products[i].name}</td>
+                    <td>${products[i].category}</td>
+                    <td>${products[i].price}</td>
+                    <td>${products[i].rating}</td>
+                </tr>
+            `
+        }
+        data += `</table>`
+
+        $("#container").html(data)
+    </script>
+</body>
+
+</html>

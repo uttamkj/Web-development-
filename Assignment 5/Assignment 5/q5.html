@@ -1,0 +1,29 @@
+<!-- utttam kumar jena -->
+<!-- sic : 23mmci80 -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla architecto laboriosam eaque. Facere rem laborum aut quo! Minus, cumque maiores. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium hic maiores earum quis iure architecto tempore corporis nemo ducimus voluptate nulla ad, quos, sunt culpa aliquid saepe. Placeat accusamus saepe beatae expedita dolor alias dolore numquam magnam necessitatibus quidem blanditiis ex, earum velit! Dolor eligendi quia est, magnam ipsam minus quibusdam officiis. Deleniti quam dignissimos ipsa molestiae reprehenderit dolorum. Impedit, beatae. Assumenda, cumque esse accusantium possimus repellat minus dolorem fugiat, modi recusandae eum animi non voluptatum adipisci error exercitationem. At ut minus minima veniam assumenda est tenetur iure esse, enim debitis maiores aspernatur non dolorum perferendis suscipit officia quod dolore.</p>  
+    <button id="btn" onclick="change()">Hide</button>
+    <script>
+        let x = document.querySelector("#text").innerHTML
+        function change(){
+            let b = document.querySelector("#btn").innerHTML
+            if(b == "Hide"){
+                document.querySelector("#text").innerHTML =""
+                document.querySelector("#btn").innerHTML ="Show"
+            }
+            else if(b=="Show"){
+                document.querySelector("#text").innerHTML = x
+                 document.querySelector("#btn").innerHTML ="Hide"
+            }
+        }
+       
+    </script>
+ </body>
+ </html>

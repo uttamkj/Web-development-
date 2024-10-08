@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <title>q14</title>
+</head>
+<body>
+<script>
+    function calculate(num1, num2, operation) {
+    return operation(num1, num2);
+    }
+    function add(num1,num2) {
+        return num1+num2
+    }
+    function subtract(num1,num2) {
+        return num1-num2
+    }
+    console.log(calculate(20,30,add))
+    console.log(calculate(50, 30, subtract));  
+</script>
+</body>
+</html>

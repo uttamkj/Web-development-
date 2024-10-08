@@ -1,0 +1,68 @@
+<!-- Name : Uttam Kumar jena
+Roll : 09 
+Sic : 23mmci80 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            margin-top: 150px;
+            /* border: 1px solid black; */
+        }
+
+        label,
+        input {
+            display: block;
+            margin: 12px;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="" id="prime">
+            <label for="">Input a Number</label>
+            <input type="text" id="usernumber">
+            <input type="submit">
+        </form>
+    </div>
+    <p id="msg"></p>
+
+    <script src="./jq/jquery-3.7.1.js"></script>
+    <script>
+        $("#prime").submit(function (e) {
+            e.preventDefault();
+            let num = $("#usernumber").val()
+            num = Number(num)
+            console.log(num);
+
+            count = 0;
+            for (let i = 1; i <= num; i++) {
+                if (num % i == 0) {
+                    count++;
+                }
+            }
+            if (count > 2) {
+                $("#msg").text("Is not a prime Number")
+            }
+            else {
+                $("#msg").text("Is a prime Number")
+            }
+        })
+    </script>
+</body>
+
+</html>

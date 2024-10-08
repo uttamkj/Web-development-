@@ -1,0 +1,40 @@
+<!-- Name : Uttam Kumar jena
+Roll : 09 
+Sic : 23mmci80 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> <u> Products </u></h1>
+    <ul id="products">
+        <li>Mobile(Rs/-22000)</li>
+        <li>Laptop(Rs/-22000)</li>
+        <li>Ear-bud(Rs/-3999)</li>
+        
+    </ul>
+    <form action="" id="addproduct">
+        <input type="text" id="product" placeholder="Product Name">
+        <input type="text" id="price" placeholder="Price">
+
+        <input type="submit" value="ADD">
+    </form>
+
+    <script src="./jq/jquery-3.7.1.js"></script>
+    <script>
+        $("#addproduct").submit(function(e){
+            e.preventDefault()
+            let p = $("#product").val()
+            // let m = $Number(("#price").val())
+            let m = $("#price").val()
+            let li = `<li>${p}(Rs/- ${m})</li>`
+            $("#products").append(li)
+            $("#product").val("")
+            $("#price").val("")
+        })
+    </script>
+</body>
+</html>

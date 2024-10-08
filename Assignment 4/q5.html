@@ -1,0 +1,24 @@
+<!-- Name:Uttam Kumar jena  -->
+<!-- SIC: 23mmci80  -->
+<!DOCTYPE html>
+<head>
+    <title>A4 Q5</title>
+</head>
+<body>
+    <script>
+        function countVowels(str){
+            let count = 0;
+            for(let i =0;i<str.length;i++){
+               let ch = str.charAt(i).toLowerCase()
+               if(ch == "a" ||ch == "e" ||ch == "i" ||ch == "o" ||ch == "u"){
+                count=count+1
+               }
+            }
+            return count
+        }
+        let s1 = "afdsgsdgeigeo"
+        let ans = countVowels(s1)
+        console.log(ans);
+    </script>
+</body>
+</html>

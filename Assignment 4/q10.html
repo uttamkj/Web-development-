@@ -1,0 +1,42 @@
+<!-- Name:Uttam Kumar jena  -->
+<!-- SIC: 23mmci80  -->
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findDuplicate(j,a,arr){
+            for(let i=j+1;i<arr.length;i++){
+                if(a==arr[i]){
+                    return false
+                }
+            }
+            return true
+        }
+        function createArray(arr,func){
+            newArr=[]
+            for(let i=0;i<arr.length;i++){
+                if(func(i,arr[i],arr)){
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+        let arr=[1,2,3,4,2,2,1,4]
+        newArr=createArray(arr,findDuplicate)
+        console.log(arr)
+        console.log(newArr)
+    </script>
+</body>
+</html>
+
+
+<!-- function removeDuplicates(arr) {
+    return [...new Set(arr)];
+}
+The ... (spread operator) converts the Set back into an array.
+// Example usage:
+const arrayWithDuplicates = [1, 2, 3, 4, 2, 3, 5, 1];
+const uniqueArray = removeDuplicates(arrayWithDuplicates);
+console.log(uniqueArray); // Output: [1, 2, 3, 4, 5] -->

@@ -1,0 +1,46 @@
+<!-- utttam kumar jena -->
+<!-- sic : 23mmci80 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            margin: 50px;
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 50%;
+        }
+        .changeBgColor {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle" id="circle"></div>
+    <button id="btn" onclick="changeColor()">ON</button>
+
+    <script>
+
+        function changeColor() {
+            let value = document.querySelector("#btn").innerHTML
+            if (value == "ON") {
+                let c = document.querySelector("#circle");
+                c.classList.add("changeBgColor")
+                document.querySelector("#btn").innerHTML = "OFF"
+            }
+            else {
+                let c = document.querySelector("#circle")
+                c.classList.remove("changeBgColor")
+                document.querySelector("#btn").innerHTML = "ON"
+            }
+        }
+    </script>
+</body>
+
+</html>

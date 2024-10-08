@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            width: 500px;
+            margin: 20px auto;
+        }
+        input,textarea,select{
+            display: block;
+            margin: 24px;
+            width: 100%;
+            padding: 4px;
+        }
+        input[type='radio'],
+        input[type='checkbox']{
+            display: inline-block;
+            width: 20px;
+            margin: 4px;
+        }
+        .error{
+            color: red;
+        }
+        .xyz{
+            margin-left: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>JavaScript Validation Form</h1>
+        <form action="./ThankYou.html" method="post" onsubmit="validate(event)">
+            <input type="text" placeholder="Name" id="name">
+            <label class="error" for="" id="nameError"></label>
+
+            <input type="text" placeholder="Email" id="Email">
+            <label class="error" for="" id="emailError"></label>
+
+            <input type="text" placeholder="mobile" id="mobile">
+            <label class="error" for="" id="mobError"></label>
+
+            <textarea rows="5" cols="20" placeholder="Address" id="address"></textarea>
+            <label class="error" id="addressError"></label>
+
+            <select name="" id="country">
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="US">US</option>
+                <option value="UK">UK</option>
+            </select>
+            <label class="error" id="countryError"></label>
+
+            <input type="date" name="dob" id="dob"><!-- YYYY-MM-DD-->
+
+            <input type="password" name="password" id="password" placeholder="Password" >
+            <label for="" id="passError"></label>
+
+            <label for="" class="xyz" > Gender: </label>
+            <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female" >Female
+            <input type="radio" name="gender" value="Other">Other
+    
+            <br>
+            <label for="" class="xyz">Language Known:</label>
+            <input type="checkbox" name="language" value="English">English
+            <input type="checkbox" name="language" value="Hindi" >Hindi
+            <input type="checkbox" name="language" value="Odiya">Odiya
+
+            <input type="submit">
+
+        </form>
+    </div>
+    <script src="formjs.js"></script>
+</body>
+
+</html>

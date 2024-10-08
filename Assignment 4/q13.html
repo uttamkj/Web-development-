@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <title>q13</title>
+</head>
+<body>
+    <script>
+        let students = [
+            { name: "David", age: 21, grade: "C" },
+            { name: "Charlie", age: 23, grade: "A" },
+            { name: "Alice", age: 20, grade: "A" },
+            { name: "Bob", age: 22, grade: "B" }
+        ]
+        //  i 
+        function getName(students, grade) {
+            let newArr = []
+            for (let i = 0; i < students.length; i++) {
+                if (students[i].grade == grade) {
+                    newArr.push(students[i])
+                }
+            }
+            return newArr
+        }
+        let studentsWithGrade = getName(students, "A");
+        console.log(studentsWithGrade);
+
+        // ii 
+        function avgAge(students) {
+            let avgAge = 0
+            totalage = 0
+            for (let i = 0; i < students.length; i++) {
+                totalage += students[i].age
+            }
+            avgAge = totalage / students.length
+            return avgAge
+        }
+        let x = avgAge(students)
+        console.log(x);
+
+        // iii too
+        function gradeObject(students) {
+            let res = {}
+            for (let i = 0; i < students.length; i++) {
+                if(res[students[i].grade]){
+                    res[students[i].grade]+=1
+                }
+                else{
+                    res[students[i].grade]=1
+                }
+            }
+            return res
+        }
+        let ans = gradeObject(students)
+        console.log(ans);
+        // iv 
+        function sortStudents(students) {
+            for (let i = 0; i < students.length - 1; i++) {
+                for (let j = i + 1; j < students.length; j++) {
+                    if (students[i].name > students[j].name) {
+                        let temp = students[i]
+                        students[i] = students[j]
+                        students[j] = temp
+                    }
+                }
+            }
+        }
+        sortStudents(students)
+        console.log(students);
+    </script>
+</body>
+</html>

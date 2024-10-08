@@ -1,0 +1,85 @@
+<!-- uttam kumar jena  23mmci80  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMR </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+        }
+        input {
+            margin-bottom: 16px;
+            padding: 8px;
+        }
+        input[type="submit"]{
+            background-color: rgb(79, 229, 240);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="bmr" action="" method="post" onsubmit="calculate(event)">
+            <h1>BMR Calculator</h1>
+            <label for="">Age:</label>
+            <input type="text" id="age">
+            <div class="box">
+                <label for="">Gender:</label>
+                <input type="radio" name="gender" value="male" id="male"> Male
+                <input type="radio" name="gender" value="female" id="female"> Female
+            </div>
+            <label for="">Height:</label>
+            <input type="text" id="height">
+            <label for="">Weight:</label>
+            <input type="text" id="weight">
+
+            <input type="submit">
+            <label for="" id="ans"> </label>
+        </form>
+    </div>
+    <script>
+        function calculate(e) {
+            e.preventDefault()
+
+            let age = document.querySelector("#age").value;
+            age = Number(age)
+            let height = document.querySelector("#height").value;
+            height = Number(height)
+            let Weight = document.querySelector("#weight").value;
+            Weight = Number(Weight)
+            let bmr
+            let gender = document.querySelectorAll("input[name='gender']");
+            let g = ""
+            for (let i = 0; i < gender.length; i++) {
+                if (gender[i].checked) {
+                    g = gender[i].value;
+                }
+            }
+            if (g == "male") {
+                bmr = (10 * Weight) + (6.25 * height) - (5 * age) + 5
+            }
+            if (g == "female") {
+                bmr = (10 * Weight) + (6.25 * height) - (5 * Age) - 161
+            }
+            document.querySelector("#ans").innerHTML=`Your BMR : ${bmr}`
+        }
+    </script>
+</body>
+</html>

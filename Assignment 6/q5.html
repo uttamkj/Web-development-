@@ -1,0 +1,74 @@
+<!-- Name : Uttam Kumar jena
+Roll : 09 
+Sic : 23mmci80 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .tab-dog {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        .tab-dog th,
+        .tab-dog td {
+            border: 1px solid black;
+            /* padding: 8px; */
+        }
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container"></div>
+
+    <script src="./jq/jquery-3.7.1.js"></script>
+    <script>
+        $.ajax({
+            url: "https://api.freeapi.app/api/v1/public/dogs",
+            method: 'GET',
+            contentType: 'application/json',
+            success: function (dogList) {
+                console.log(dogList);
+                let dogs = dogList.data.data;
+                console.log(dogs);
+                
+                let resHtml = `<table class="tab-dog"> 
+                    <tr>
+                        <th>img</th>
+                        <th>Name</th>
+                        <th>lifespan</th>
+                        <th>temperament</th>
+                    </tr>`
+                for (let i = 0; i < dogs.length; i++) {
+                    resHtml += `
+                <tr>
+                    <td><img src="${dogs[i].image.url}"></td>
+                    <td>${dogs[i].name}</td>
+                    <td>${dogs[i].life_span}</td>
+                    <td>${dogs[i].temperament}</td>
+                </tr>`
+                }
+                resHtml += `</table>`
+                $("#container").html(resHtml);
+            }
+        
+        })
+    </script>
+</body>
+
+</html>
+<!-- <td>${dogs[i].image[0]}</td> -->

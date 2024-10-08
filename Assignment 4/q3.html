@@ -1,0 +1,26 @@
+<!-- Name:Uttam Kumar jena  -->
+<!-- SIC: 23mmci80  -->
+<!DOCTYPE html>
+<head>
+    <title>A4 Q3</title>
+</head>
+<body>
+    <script>
+        function isPrime(num) {
+            count= 0
+            for (let i = 2; i <num; i++) {
+                if(num%i==0){
+                    count++
+                }
+            }
+            if(count>1){
+                return false
+            }
+            else{
+                return true 
+            }
+        }
+        console.log(isPrime(11));
+    </script>
+</body>
+</html>

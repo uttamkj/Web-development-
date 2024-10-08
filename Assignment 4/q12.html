@@ -1,0 +1,97 @@
+<!-- Name:Uttam Kumar jena  -->
+<!-- SIC: 23mmci80  -->
+<!DOCTYPE html>
+<head>
+    <title>A4 Q7</title>
+</head>
+<body>
+    <script>
+        let books = [
+            {
+                title: "The power of Now",
+                author: "Eckhart Tolle",
+                price: 499, 
+                rating: 4.3
+            },
+            {
+                title: "A New Earth: Awakening to Your Life's Purpose",
+                author: "Eckhart Tolle",
+                price: 599, 
+                rating: 4.5
+            },
+            {
+                title: "Atomic Habits: Ann Easy & Proven Way to Build Good Habits & BreakBad Ones",
+                author: "James Clear",
+                price: 799, 
+                rating: 4.8
+            },
+            {
+                title: "The 5 AM Club: Own Your Morning,Elevate Your Life",
+                author: "Robin Sharma",
+                price: 650, 
+                rating: 4.4
+            },
+            {
+                title: "Wings of Fire",
+                author: "A. P. J. Abdul Kalam",
+                price: 199, 
+                rating: 4.6
+            }
+        ]
+        //  i 
+        for(let i=0;i<books.length;i++){
+            console.log(`${books[i].author} wrote te book ${books[i].title} has a raiting ${books[i].rating} and costs ${books[i].price}`);
+        }
+        // ii 
+        console.log("books with more the 4.5 ratting ");
+        
+        for(let i=0;i<books.length;i++){
+           if(books[i].rating > 4.5){
+            console.log(` ${books[i].title}`);
+           }
+        }
+        //  iii 
+       let longestBookTitle  = books[0]
+       for(let i=1 ; i<books.length;i++){
+            if(longestBookTitle.title.length < books[i].title.length){
+                longestBookTitle = books[i];
+            }
+            console.log(longestBookTitle.title);
+       }
+    //    iv 
+    function findBookByPrice(books , inprice){
+        let resBooks = []
+        for(let i=0;i<books.length;i++){
+            if(books[i].price <=inprice){
+                resBooks.push(books[i])
+            }
+        }
+        return resBooks;
+    }
+    let pbooks = findBookByPrice(books,700)
+    if(pbooks.length == 0){
+        console.log("There is no book less then the price");
+    }else{
+        console.log(pbooks);
+        
+    }
+    // v 
+    function findBookByAuthor(books , authorName){
+        let resBooks = []
+        for(let i=0;i<books.length;i++){
+            if(books[i].author ==authorName){
+                resBooks.push(books[i])
+            }
+        }
+        return resBooks;
+    }
+    let resBook = findBookByAuthor(books,"Robin Sharma")
+    if(resBook.length == 0){
+        console.log("There is no book found");
+    }else{
+        console.log(resBook);
+        
+    }
+    </script>
+</body>
+</html>

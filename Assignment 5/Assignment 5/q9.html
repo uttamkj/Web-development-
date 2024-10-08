@@ -1,0 +1,67 @@
+<!-- Name uttam kumar jena  -->
+<!-- sic 23mmci80  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            width: 300px;
+            margin: 10px auto;
+        }
+        input,label{
+            display: block;
+            margin-bottom: 24px;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" onsubmit="generatePassword(event)" >
+            <label for="">Enter the length of password</label>
+            <input type="text" id="length">
+            <input type="submit" >
+            <label for="" id="msg"></label>
+        </form>
+    </div>
+
+    <script>
+        let num = "0123456789"
+        let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        let lower2 = upper.toLocaleLowerCase();
+        let  lower = "abcdefghijklmnopqrstuvwxyz"
+        let special = "!@#$%^&*"
+        let allChars = upper+num+lower+special;
+        function generateRandom(min,max){
+            let num = Math.floor(Math.random() * (max - min + 1)) + min;
+            return num
+        }
+        function generatePassword(e){
+            e.preventDefault()
+            pass=""
+            let length = document.querySelector("#length").value 
+            length = Number(length)
+            if(length>=8 && length<=16){
+                pass+= num[generateRandom(0,9)]+upper[generateRandom(0,25)]+lower[generateRandom(0,25)]+special[generateRandom(0,7)]
+               
+                for(let i=0;i<length-4;i++){
+                    pass+= allChars[generateRandom(0,68)]
+                }
+                document.querySelector("#msg").innerHTML= pass.slice(0, length);
+            }
+            else{
+                document.querySelector("#msg").innerHTML = "Lenght should be grater then 8 and less then 16" 
+            }
+            
+        }
+    </script>
+</body>
+</html>

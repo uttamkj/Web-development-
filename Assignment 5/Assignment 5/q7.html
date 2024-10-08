@@ -1,0 +1,62 @@
+<!-- utttam kumar jena -->
+<!-- sic : 23mmci80 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .bar {
+            display: flex;
+            justify-content: end;
+        }
+
+        .myclass {
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <input type="checkbox" id="theme" class="checkbox" onchange="func()">
+        <label for="">Dark</label>
+    </div>
+    <h1>The Heading</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ab, amet ex debitis distinctio similique
+        exercitationem pariatur tempore aut quaerat, voluptate commodi repellendus expedita. Molestias, sint vero
+        tempora tempore rerum inventore quia nam architecto minima saepe neque quod rem labore incidunt velit qui,
+        obcaecati veritatis expedita possimus distinctio cupiditate unde iure? Voluptatum, cumque enim quas
+        exercitationem veniam, reprehenderit architecto quos error sint deserunt nulla. Quasi dolorum maxime, fugiat
+        deleniti illo molestias error temporibus optio tempore id nobis ipsum magnam! Sapiente excepturi similique, at
+        quisquam et voluptas hic deserunt labore sequi error iste architecto nisi vero molestias nobis nesciunt iure qui
+        quasi aliquid repellendus consequuntur saepe optio alias id. Recusandae, ullam voluptatem. Distinctio adipisci,
+        molestias neque fugit sed nesciunt deleniti amet velit ea! Facere mollitia dolor magnam perspiciatis debitis
+        deleniti cum eum suscipit reiciendis. Tempora, ea voluptate minima quae fugit eum! Quidem dolores tempore ea
+        iure nisi labore quas ullam architecto non quisquam ut, voluptate, rem blanditiis aspernatur vitae fugiat
+        nostrum veniam explicabo repellendus libero officiis eius adipisci. Tempora autem ducimus adipisci ut maiores
+        eveniet ab illum ipsum expedita, nisi dolorem cupiditate quibusdam ea debitis neque earum obcaecati corrupti sit
+        excepturi id officia perferendis velit! Quos, a! Accusantium, aliquid. Illo, nisi.</p>
+    <script>
+        function func() {
+            let x = document.querySelector("#theme")
+            let c = document.querySelector("body");
+            if (x.checked) {
+                c.classList.add("myclass")
+            }
+            else{
+                c.classList.remove("myclass")
+            }
+        }
+    </script>
+</body>
+</html>

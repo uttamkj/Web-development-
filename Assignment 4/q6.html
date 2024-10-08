@@ -1,0 +1,39 @@
+<!-- Name:Uttam Kumar jena  -->
+<!-- SIC: 23mmci80  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A4 Q6</title>
+</head>
+<body>
+    <script>
+        let student = {
+            roll : 9,
+            name: "uttam",
+            mobile:8018886621,
+            email:"uttamkumarjena507@gmail.com"
+        }
+        console.log(` name : ${student.name}roll number :${student.roll} mobile no : ${student.mobile} email: ${student.email}`);
+        
+        student.mobile = 9040506040
+        
+        console.log(` name : ${student.name}roll number :${student.roll} mobile no : ${student.mobile} email: ${student.email}`);
+
+        student.sgpa = [8,7,8,9]
+        console.log(student);
+        
+        function calculateCgpa(student) {
+            let cgpa = 0
+            for(let i =0;i<4;i++){
+                cgpa = cgpa + student.sgpa[i]
+            }
+            return cgpa/4
+        }
+        
+        let result  =calculateCgpa(student)
+        console.log(result);  
+    </script>
+</body>
+</html>

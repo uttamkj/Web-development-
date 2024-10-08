@@ -1,0 +1,196 @@
+<!-- Name: Anila Sahu -->
+<!-- SIC: 23MMCI37 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+        .container{
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid;
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        label{
+            font-size: 16px;
+            color: #333;
+        }
+        .form-group input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease-in-out;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" >
+                <div id="nameError" class="error"></div>
+            </div>
+
+            <div>
+                <label>Gender:</label>
+                <div>
+                    <label for="male">Male</label><input type="radio" id="male" name="gender" value="Male" >
+                    <label for="female">Female</label><input type="radio" id="female" name="gender" value="Female" >
+                </div>
+                <div id="genderError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" >
+                <div id="dobError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="4" ></textarea>
+                <div id="addressError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile:</label>
+                <input type="text" id="mobile" name="mobile" >
+                <div id="mobileError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" >
+                <div id="emailError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country" >
+                    <option value="">Select Country</option>
+                    <option value="USA">USA</option>
+                    <option value="India">India</option>
+                    <option value="UK">UK</option>
+                    <option value="Canada">Canada</option>
+                </select>
+                <div id="countryError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" >
+                <div id="passwordError" class="error"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" >
+                <div id="confirmPasswordError" class="error"></div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const errorElements = document.querySelectorAll('.error');
+            errorElements.forEach(error => error.textContent = '');
+    
+            let valid = true;
+            const name = document.getElementById('name').value;
+            if (name === ''|| !/^[a-zA-Z\s]+$/.test(name)) {
+                document.getElementById('nameError').textContent = 'Please enter a valid name';
+                valid = false;
+            }
+            const gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                document.getElementById('genderError').textContent = 'Please select your gender.';
+                valid = false;
+            }
+            const dob = document.getElementById('dob').value;
+            if (!dob) {
+                document.getElementById('dobError').textContent = 'Please select your date of birth.';
+                valid = false;
+            }
+            const address = document.getElementById('address').value;
+            if (address === '') {
+                document.getElementById('addressError').textContent = 'Please enter your address.';
+                valid = false;
+            }
+            const mobile = document.getElementById('mobile').value;
+            if (!/^\d{10}$/.test(mobile)) {
+                document.getElementById('mobileError').textContent = 'Please enter a valid 10-digit mobile number.';
+                valid = false;
+            }
+            const email = document.getElementById('email').value;
+            if (!/^\S+@\S+\.\S+$/.test(email)) {
+                document.getElementById('emailError').textContent = 'Please enter a valid email address.';
+                valid = false;
+            }
+            const country = document.getElementById('country').value;
+            if (country === '') {
+                document.getElementById('countryError').textContent = 'Please select your country.';
+                valid = false;
+            }
+            const password = document.getElementById('password').value;
+            if (password.length < 8) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 8 characters long.';
+                valid = false;
+            }
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            if (confirmPassword !== password) {
+                document.getElementById('confirmPasswordError').textContent = 'Passwords do not match.';
+                valid = false;
+            }
+            if (valid) {
+                alert("Form submitted !!!")
+                e.preventDefault()
+            }
+        });
+    </script>
+</body>
+</html>

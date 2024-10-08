@@ -1,0 +1,39 @@
+<!-- Name : Uttam Kumar jena
+Roll : 09 
+Sic : 23mmci80 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"></div>
+        
+
+    <script src="./jq/jquery-3.7.1.js"></script>
+    <script>
+        $.ajax({
+            url:"https://countriesnow.space/api/v0.1/countries/flag/unicode",
+            method: 'GET',
+            contentType: 'application/json',
+            success: function (data){
+                console.log(data);
+                let country = data.data;
+                console.log(country);
+                
+                let reshtml = `<select name="" id="country">`
+                for(let i=0;i<country.length;i++){
+                    reshtml+=`<option value="${country[i].unicodeFlag}"> ${country[i].name}</option>`
+                }
+
+                reshtml+=`</select>`
+                console.log(reshtml);
+                
+                $(".container").html(reshtml);
+            }
+        })
+    </script>
+</body>
+</html>

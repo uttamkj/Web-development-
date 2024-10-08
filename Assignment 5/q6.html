@@ -1,0 +1,78 @@
+<!-- utttam kumar jena -->
+<!-- sic : 23mmci80 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .counter-container {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+        }
+        .counter-container button {
+            width: 50px;
+            height: 40px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #count {
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counter-container">
+        <button onclick="minus()"> - </button>
+        <input type="text" id="count" value="1">
+        <button onclick="plus()"> + </button>
+    </div>
+
+    <script>
+        function minus(){
+            let x = document.querySelector("#count").value;
+            let y = document.querySelector("#count");
+            if(x > 1){
+                x = Number(x);
+                x--;
+                document.querySelector("#count").value = x;
+            }
+            if(x < 10){
+                y.style.color = 'black';
+            }
+        }
+
+        function plus(){
+            let x = document.querySelector("#count").value;
+            let y = document.querySelector("#count");
+            x = Number(x);
+            x++;
+            document.querySelector("#count").value = x;
+            if(x >= 10){ 
+                y.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

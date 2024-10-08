@@ -1,0 +1,72 @@
+<!-- uttam kumar jena  -->
+ <!-- sic 23mmci80  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+        }
+        form{
+            width: 500px;
+            margin: 20px auto;
+        }
+        input, textarea, select{
+            display: block;
+            margin-top: 5px;
+            width: 100%;
+            padding: 8px;
+        }
+        input[type='radio'],
+        input[type='checkbox']{
+            display: inline-block;
+            width: 20px;
+        }
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Validation</h1>
+    <form action="./thank.html" method="post" onsubmit="validate(event)">
+        <input type="text" name="name" id="name" placeholder="Name">
+        <label class="error" id="nameError"></label>
+        <input type="number" name="age" id="age" placeholder="Age">
+        <label class="error" id="ageError"></label>
+        <textarea rows="5" cols="20" placeholder="Address" id="address"></textarea>
+        <label class="error" id="addressError"></label>
+        <select name="" id="country">
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="Pakisthan">Pakisthan</option>
+            <option value="China">China</option>
+        </select>
+        <label class="error" id="countryError"></label>
+        <input type="date" name="dob" id="dob"><!-- YYYY-MM-DD-->
+        <input type="text" name="mobile" id="mobile" placeholder="Mobile">
+        <label class="error" id="mobileError"></label>
+        <input type="text" name="email" id="email" placeholder="Email">
+        <label class="error" id="emailError"></label>
+        <br>
+        Gender: 
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female" >Female
+        <input type="radio" name="gender" value="Other">Other
+        <label class="error" id="genderError"></label>
+        <input type="password" name="password" id="password" placeholder="Password" >
+        <input type="password" name="password" id="cpassword" placeholder=" Confirm Password" >
+        <label class="error" id="passError"></label>
+        <br>
+        <input type="submit">
+    </form>
+    <script src="./js/form-validation.js"></script>
+</body>
+</html>

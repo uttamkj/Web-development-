@@ -1,0 +1,23 @@
+<!-- Name:Uttam Kumar jena  -->
+<!-- SIC: 23mmci80  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>A4 Q2</title>
+</head>
+<body>
+    <script>
+        function sumOfDigit(num) {
+            let sum =0
+            while (num>0) {
+                let lastdigit = (num %10) 
+                sum = sum+lastdigit
+                num = parseInt(num/10) 
+            }
+            return sum             
+        }
+        let x = sumOfDigit(250)
+        console.log(x);
+    </script>
+</body>
+</html>

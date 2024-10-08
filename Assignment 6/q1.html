@@ -1,0 +1,50 @@
+<!-- Name : Uttam Kumar jena
+Roll : 09 
+Sic : 23mmci80 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQ 1</title>
+    <style>
+        .mystyle{
+            color: red;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="text">javaScript</h1>
+    <h2 id="css">JavaScript Library</h2>
+
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla facere, fugiat, obcaecati corrupti dolorum porro commodi dolor voluptas magnam, ut libero dignissimos. Quisquam dignissimos asperiores modi earum debitis, vero provident laudantium praesentium vel quae in reprehenderit animi culpa assumenda ut facilis quam error? Itaque corporis numquam fugiat, ut, consequuntur at exercitationem voluptatibus excepturi aperiam libero eius tempora? Ab quos necessitatibus quibusdam itaque rem. Commodi id enim velit possimus quisquam architecto autem, cupiditate suscipit hic accusantium eaque natus voluptatibus excepturi labore numquam laudantium voluptatem cum quia. Blanditiis, aspernatur nemo ullam voluptate beatae nulla libero hic minima modi fugit harum sed facilis eveniet illo provident earum. Labore possimus, quasi quia, quibusdam, fugiat dicta eligendi ad neque repudiandae sequi provident odio ea assumenda necessitatibus rem odit dolores. Nulla nostrum, magni ea odit accusamus commodi! Doloribus quam laudantium voluptatum minus odit quae quasi esse libero eaque praesentium fuga pariatur veritatis sequi eum minima quidem, asperiores accusantium unde, commodi officiis. Voluptate qui, obcaecati similique necessitatibus quis rerum ratione? Maxime magnam magni asperiores dolores voluptatem voluptatibus consectetur omnis totam dicta harum, dolore saepe assumenda sint, in libero vitae sapiente voluptatum! Quidem nesciunt, quaerat porro repudiandae eveniet quo quis impedit nostrum veniam aliquid, reiciendis omnis ipsa voluptatibus inventore deleniti placeat adipisci accusamus debitis, magni ad atque. Ex debitis distinctio animi reiciendis, incidunt cum perspiciatis quidem laboriosam voluptatibus ab. Vel quaerat, exercitationem mollitia iusto nobis delectus consectetur odio. Enim ducimus corporis soluta et? Laborum ex esse qui similique porro a magni exercitationem, molestias, odit nesciunt nemo vero dolor ullam alias velit! Sint expedita illum odit, totam libero earum obcaecati sed cupiditate modi ipsam, veniam corrupti repellendus temporibus similique perferendis, tempore quis dolores atque. Maiores quam explicabo voluptates dolorem, deserunt, eaque, laborum excepturi eius consequatur laudantium temporibus vitae. Expedita dicta eveniet neque iste perferendis rem veniam possimus eum temporibus consequatur placeat unde nulla iusto, eius enim aliquam voluptatum pariatur, voluptates veritatis, qui sed? Praesentium repudiandae, quaerat hic tempore fuga incidunt. Illo ipsum voluptatem consequatur cupiditate earum molestias voluptates quae? Rerum repudiandae facilis obcaecati aliquam fuga repellendus cumque libero architecto nam porro, eligendi quod fugit perferendis cupiditate optio veritatis neque et modi, necessitatibus dolorem incidunt in inventore esse iusto! Eveniet distinctio sunt tempore quam, iusto assumenda perspiciatis a porro saepe ab neque earum sapiente facere reprehenderit veritatis aliquid. Perferendis voluptatem culpa a, quos adipisci blanditiis possimus ratione dignissimos tempore dicta deleniti facilis reprehenderit. Doloribus sapiente hic odio id officia sint aliquid, sit necessitatibus asperiores eum quod inventore ratione consequatur, commodi velit eligendi suscipit earum quia in! Animi facere magnam sequi reiciendis? Omnis dignissimos maxime reiciendis esse non, voluptate pariatur aperiam cum voluptatibus asperiores deleniti, enim quia vel dolorum a, aliquam obcaecati eius rem quos optio reprehenderit quidem ab dolorem commodi. Accusantium, quibusdam quos ad vero nulla omnis ex beatae neque architecto quaerat aut velit distinctio iure exercitationem dolor magnam adipisci reiciendis natus quidem explicabo ab ipsum deleniti. Impedit illo eum sapiente molestiae, quae odit maxime assumenda magnam itaque eveniet minus quod perspiciatis! Numquam ipsa magnam tempore odit, dolore beatae facilis.</p>
+    <button id="hide">Hide</button>
+    <button id="show">show</button>
+    <button id="Toggle">Toggle</button>
+    <button id="fadeout">fade out</button>
+    <button id="fadein">fade in</button>
+
+    <script src="./jq/jquery-3.7.1.js"></script>
+    <script>
+        $("#text").text("Changed text")
+        $("#css").addClass("mystyle")
+        $("#hide").click(function(){
+            $("#para").hide()
+        })
+        $("#show").click(function(){
+            $("#para").show()
+        })
+        $("#Toggle").click(function(){
+            $("#para").toggle()
+        })
+        $("#fadeout").click(function(){
+            $("#para").fadeOut()
+        })
+        $("#fadein").click(function(){
+            $("#para").fadeIn()
+        })
+    </script>
+</body>
+</html>

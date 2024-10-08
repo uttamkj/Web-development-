@@ -1,0 +1,30 @@
+<!-- Name:Uttam Kumar jena  -->
+<!-- SIC: 23mmci80  -->
+<!DOCTYPE html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateAge(dob) {
+            const birthDate = new Date(dob);
+            const now = new Date();
+            let years = now.getFullYear() - birthDate.getFullYear();
+            let months = now.getMonth() - birthDate.getMonth();
+            let days = now.getDate() - birthDate.getDate();
+            if (days < 0) {
+                months--;
+                const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                days += prevMonth.getDate(); 
+            }
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            return `${years} years, ${months} months, and ${days} days`;
+        }
+        const dob = "07/16/2001"; 
+        console.log(calculateAge(dob));
+    </script>
+</body>
+</html>
