@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script src="./javascript/jquery-3.7.1.js"></script>
+    <script>
+        $.ajax({
+            url: "", // address of the server,
+            method: "", // GET, POST, PUT, PATCH, DELETE
+            data: "", // JSON String, data to be send to the server, optional
+            contentType: "", // application/json, optional
+            success: function(data){}, // data received from the server
+            error: function(xhr, status, error){} // optional
+        })
+
+        $.get("url", function(data, status){}) // only for get request
+        $.post("url", "data", function(data, status, xhr){}) // only for the post request
+    </script>
+</body>
+</html>

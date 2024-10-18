@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mystyle{
+            color: blue;
+            background-color: red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="html">HTML</h1>
+    <h1 class="css">CSS</h1>
+    <h1 class="css">JS</h1>
+    <button id="showDate">Show Date</button>
+    <button id="log">Log Hello</button>
+    <button id="showData">Show</button>
+    <button id="hideData">Hide</button>
+    <button id="toggleData">Toggle</button>
+    <br>
+    <p id="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti dolore iste, aspernatur a nobis quos eum alias dolor? Recusandae, harum pariatur ratione voluptatum deleniti repellendus, hic voluptas ex, ipsa amet laudantium. Enim autem voluptatem unde laborum eos, ullam aliquam quam magni cupiditate cum ipsum aperiam nostrum ea? Possimus, impedit. Laudantium praesentium quae obcaecati ea dicta mollitia laboriosam. Blanditiis minima libero ipsum voluptatum doloremque optio quo animi voluptatibus similique ducimus! Quas vitae sequi eius ullam libero ad doloremque, neque, eveniet reprehenderit voluptatem asperiores officiis nam, eligendi culpa? Id veritatis, at optio accusamus quos, itaque maxime consectetur tenetur voluptatibus quasi consequuntur assumenda.</p>
+
+    <!-- <button id="btnSlideIn">Slide In</button>
+    <button id="btnSlideOut">Slide Out</button>
+    <button id="btnSlideTime">Slide Time</button> -->
+    <button id="btnSlideIn">Fade In</button>
+    <button id="btnSlideOut">Fade Out</button>
+    <button id="btnSlideTime">Fade Time</button>
+    <br><br>
+    <form action="" id="addForm">
+        <input type="text" id="num1" placeholder="First Number"><br><br>
+        <input type="text" id="num2" placeholder="Second Number"><br><br>
+        <input type="submit" value="ADD">
+    </form>
+    <p id="result"></p>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+    <script src="./javascript/jquery-3.7.1.js"></script>
+    <script>
+
+        
+        // console.log($);
+
+        // let h = $("h1");
+        // let h = $("#html");
+        // let h = $(".css");
+        // console.log(h);
+        // console.log(h[0]);
+        // console.log(typeof(h));
+        
+        // $("#html").text("hypertext markup language")
+        // console.log($("#html").text());
+
+        // $("#html").css({"color": "red","backgroundColor": "yellow"})
+        // $(".css").addClass("mystyle")
+
+        $("#showDate").click(function(){
+            alert(new Date().toLocaleString())
+        })
+
+        $("#log").click(function(){
+            console.log("Hello JS!")
+        })
+
+        $("#html").mouseover(function(){
+            console.log("Mouse Over");
+            console.log(this);
+            // this.css({"color": "red"})
+            // $("#html").css({"color": "red"})
+            $(this).css({"color": "red"})
+        })
+
+        $("#html").mouseout(function(){
+            $("#html").css({"color": "black"})
+        })
+
+        $("#showData").click(function(){
+            $("#html").show();
+        })
+
+        $("#hideData").click(function(){
+            $("#html").hide();
+        })
+
+        $("#toggleData").click(function(){
+            $("#html").toggle();
+        })
+
+        $("#btnSlideIn").click(function(){
+            // $("#text").slideDown()
+            $("#text").fadeIn()
+        })
+
+        $("#btnSlideOut").click(function(){
+            // $("#text").slideUp()
+            $("#text").fadeOut()
+        })
+        $("#btnSlideTime").click(function(){
+            // $("#text").slideUp(5000)
+            $("#text").fadeIn(5000)
+        })
+
+        $("#addForm").submit(function(e){
+            e.preventDefault()
+            let a = $("#num1").val()
+            let b = $("#num2").val()
+            if(a == "" || b == ""){
+                alert("Both the inputs are requred")
+                return
+            }
+            if(isNaN(a) || isNaN(b)){
+                alert("Both the inputs must be number")
+                return
+            }
+            a =  Number(a)
+            b = Number(b)
+            let c = a+b
+            $("#result").text("Sum = "+c)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab-std{
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        .tab-std th,
+        .tab-std td{
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello jQuery!</h1>
+    <div id="container">
+        <p>Container...</p>
+    </div>
+    <ul id="foods">
+        <li>Tea</li>
+        <li>Coffee</li>
+    </ul>
+    <form action="" id="addFood">
+        <input type="text" id="food" placeholder="Name of the food">
+        <input type="submit" value="ADD">
+    </form>
+
+
+    <script src="./javascript/jquery-3.7.1.js"></script>
+    <script>
+        // let h1 = "<h1>Hello World!</h1>"
+        // $("body").text(h1)
+        // $("body").html(h1)
+        // $("body").append(h1)
+        // $("#container").html(h1)
+
+        // let h2 = "<h2>jQuery</h2>"
+        // $("body").html(h2)
+        // $("body").append(h2)
+        // $("#container").html(h2)
+
+        let name = "Sam";
+        let age = 23
+        // let h1name = `<h1>Hello ${name}</h1>`
+        // let h1 = `<h1>Hello ${name}. You are ${age} years old.</h1>`
+        // $("#container").html(h1name);
+        // $("#container").html(h1);
+
+        // let arr = ['HTML', 'CSS', 'JS', 'jQ']
+        // let data = "<h3>Subjects are "
+        // for(let i=0; i<arr.length; i++){
+        //     data += arr[i]+" "
+        // }
+        // data += "</h3>"
+        // let data = "<p>Subjects are - </p>"
+        // data += "<ul>";
+        // for(let i=0; i<arr.length; i++){
+        //     data += `<li>${arr[i]}</li>`
+        // }
+        // data += "</ul>"
+        // console.log(data);
+        // $("#container").html(data)
+
+        let students = [
+            {roll: 1, name: "Ram", cgpa: 9.0},
+            {roll: 2, name: "Riya", cgpa: 9.2},
+            {roll: 3, name: "Sam", cgpa: 8.0},
+            {roll: 4, name: "Smita", cgpa: 9.6},
+            {roll: 5, name: "Ajay", cgpa: 8.6},
+        ]
+        let data = `<table class="tab-std">`
+        data += `<tr><th>Roll</th><th>Name</th><th>CGPA</th></tr>`
+        for(let i=0; i<students.length; i++){
+            data += `
+                <tr>
+                    <td>${students[i].roll}</td>
+                    <td>${students[i].name}</td>
+                    <td>${students[i].cgpa}</td>
+                </tr>
+            `
+        }
+
+        data += `</table>`
+        // $("#container").html(data)
+
+        $("#addFood").submit(function(e){
+            e.preventDefault()
+            let f = $("#food").val()
+            let li = `<li>${f}</li>`
+            $("#foods").append(li)
+            $("#food").val("")
+        })
+
+    </script>
+</body>
+</html>

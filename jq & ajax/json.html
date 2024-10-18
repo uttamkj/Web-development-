@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let emp = {
+        //     id: 1,
+        //     name: "John Smith",
+        //     mobile: [88888888, 9999999],
+        //     email: 'john@test.com',
+        //     getDate: function(){},
+        //     test: undefined
+        // }
+        // JS Obj -> JSON String
+        // let serial_emp = JSON.stringify(emp)
+        // console.log(emp);
+        // console.log(serial_emp);
+        // console.log(typeof(emp));
+        // console.log(typeof(serial_emp));
+
+        //JSON String -> JS Obj
+        let data = '{"id":1,"name":"John Smith","mobile":[88888888,9999999],"email":"john@test.com"}'
+        
+        let emp = JSON.parse(data)
+
+        // console.log(data);
+        // console.log(emp);
+        console.log(typeof(data));
+        console.log(typeof(emp));
+        // console.log(data.name);
+        // console.log(emp.name);
+        
+
+        
+    </script>
+</body>
+</html>
